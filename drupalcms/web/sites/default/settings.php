@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Pantheon Private File Path Fix
+ */
+if (isset($_ENV['PANTHEON_ENVIRONMENT']) || getenv('PANTHEON_ENVIRONMENT') || isset($_SERVER['PANTHEON_ENVIRONMENT'])) {
+  $settings['file_private_path'] = '/files/private';
+}
+else {
+  $settings['file_private_path'] = '../private';
+}
+
 // phpcs:ignoreFile
 
 // DDEV-created Drupal 10 settings.php from upstream default.settings.php
@@ -906,22 +916,3 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
-/**
- * Private file path:
- *
- * A local file system path where private files will be stored. This directory
- * must be absolute, outside of the Drupal installation directory and not
- * accessible over the web.
- *
- * Note: Caches need to be cleared when this value is changed to make the
- * private:// stream wrapper available to the system.
- *
- * See https://www.drupal.org/documentation/modules/file for more information
- * about securing private files.
- */
-if (isset($_ENV['PANTHEON_ENVIRONMENT']) || getenv('PANTHEON_ENVIRONMENT')) {
-  $settings['file_private_path'] = '/files/private';
-}
-else {
-  $settings['file_private_path'] = $app_root . '/../private';
-}
