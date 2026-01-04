@@ -919,8 +919,8 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
  * See https://www.drupal.org/documentation/modules/file for more information
  * about securing private files.
  */
-if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
-  $settings['file_private_path'] = $_SERVER['HOME'] . '/files/private';
+if (isset($_ENV['PANTHEON_ENVIRONMENT']) || getenv('PANTHEON_ENVIRONMENT')) {
+  $settings['file_private_path'] = '/files/private';
 }
 else {
   $settings['file_private_path'] = $app_root . '/../private';
