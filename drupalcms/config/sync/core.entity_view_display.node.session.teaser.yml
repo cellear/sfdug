@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.session.field_is_non_session
     - field.field.node.session.field_is_training
     - field.field.node.session.field_organizers
+    - field.field.node.session.field_parent_event
     - field.field.node.session.field_person_speakers
     - field.field.node.session.field_r
     - field.field.node.session.field_session_category
@@ -33,63 +34,34 @@ targetEntityType: node
 bundle: session
 mode: teaser
 content:
-  content_moderation_control:
-    settings: {  }
+  field_session_video:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
-  field_audience:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_r:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
-  field_session_category:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_short_description:
-    type: basic_string
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_speakers:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 2
-    region: content
 hidden:
+  content_moderation_control: true
+  field_audience: true
   field_description: true
   field_event: true
   field_is_non_session: true
   field_is_training: true
   field_organizers: true
+  field_parent_event: true
   field_person_speakers: true
+  field_r: true
+  field_session_category: true
   field_session_frames: true
   field_session_sponsors: true
-  field_session_video: true
+  field_short_description: true
   field_slides: true
   field_social_media_card: true
   field_source_url: true
+  field_speakers: true
   field_time_slot: true
   field_topics: true
   links: true

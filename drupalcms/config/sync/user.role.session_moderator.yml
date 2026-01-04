@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.full_html
     - node.type.bof
     - node.type.session
     - taxonomy.vocabulary.room
@@ -12,6 +13,7 @@ dependencies:
     - config_pages
     - content_moderation
     - field_permissions
+    - filter
     - node
     - system
     - taxonomy
@@ -48,6 +50,7 @@ permissions:
   - 'use session_acceptance transition edit_confirmed'
   - 'use session_acceptance transition reject_session'
   - 'use session_acceptance transition waitlist'
+  - 'use text format full_html'
   - 'view any unpublished content'
   - 'view bof revisions'
   - 'view event_details config page entity'

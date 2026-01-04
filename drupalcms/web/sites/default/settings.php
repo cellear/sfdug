@@ -26,6 +26,20 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 
 $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 
+// Pantheon Database Configuration
+if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
+    $databases['default']['default'] = [
+        'database' => $_ENV['DB_NAME'],
+        'username' => $_ENV['DB_USER'],
+        'password' => $_ENV['DB_PASSWORD'],
+        'host' => $_ENV['DB_HOST'],
+        'port' => $_ENV['DB_PORT'],
+        'driver' => 'mysql',
+        'prefix' => '',
+        'collation' => 'utf8mb4_general_ci',
+    ];
+}
+
 // Include Pantheon settings if they exist.
 if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && file_exists(__DIR__ . '/settings.pantheon.php')) {
     include __DIR__ . '/settings.pantheon.php';

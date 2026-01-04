@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.session.field_is_non_session
     - field.field.node.session.field_is_training
     - field.field.node.session.field_organizers
+    - field.field.node.session.field_parent_event
     - field.field.node.session.field_person_speakers
     - field.field.node.session.field_r
     - field.field.node.session.field_session_category
@@ -273,6 +274,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_parent_event: true
   path: true
   promote: true
   revision_log: true

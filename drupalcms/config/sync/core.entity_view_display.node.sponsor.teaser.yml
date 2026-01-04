@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.sponsor.body
+    - field.field.node.sponsor.field_active
+    - field.field.node.sponsor.field_active_period
     - field.field.node.sponsor.field_sponsor_level
     - field.field.node.sponsor.field_sponsor_logo
     - field.field.node.sponsor.field_website_address
@@ -51,5 +53,7 @@ content:
     weight: 2
     region: content
 hidden:
+  field_active: true
+  field_active_period: true
   field_sponsor_level: true
   links: true

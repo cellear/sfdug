@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - filter.format.full_html
     - filter.format.restricted_html
     - node.type.article
   module:
@@ -61,6 +62,7 @@ permissions:
   - 'revert article revisions'
   - 'select account cancellation method'
   - 'use text format basic_html'
+  - 'use text format full_html'
   - 'use text format restricted_html'
   - 'view all revisions'
   - 'view article revisions'

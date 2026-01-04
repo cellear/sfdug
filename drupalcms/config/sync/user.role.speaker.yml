@@ -3,10 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - filter.format.full_html
     - node.type.session
     - workflows.workflow.session_acceptance
   module:
     - content_moderation
+    - filter
     - node
 _core:
   default_config_hash: nU3T_cDSqTs2wvhuCmoyR99t22uFdcQKrAjoYQeCoPY
@@ -20,4 +22,5 @@ permissions:
   - 'use session_acceptance transition decline'
   - 'use session_acceptance transition edit_confirmed'
   - 'use session_acceptance transition propose_session'
+  - 'use text format full_html'
   - 'view session revisions'

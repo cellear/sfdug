@@ -131,6 +131,46 @@ nav.primary-menu ul ul a {
   font-size: 0.9rem;
 }
 
+/* Breadcrumbs */
+#block-sfdug-2025-breadcrumbs {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+#block-sfdug-2025-breadcrumbs ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+#block-sfdug-2025-breadcrumbs li:not(:last-child)::after {
+  content: "/";
+  margin-left: 1rem;
+  color: var(--muted);
+  opacity: 0.5;
+}
+
+#block-sfdug-2025-breadcrumbs a {
+  color: var(--coral);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+#block-sfdug-2025-breadcrumbs a:hover {
+  opacity: 0.8;
+}
+
+#block-sfdug-2025-breadcrumbs li:last-child {
+  color: var(--off-white);
+}
+
 /* Main Content */
 main {
   padding: 4rem 0;
@@ -199,6 +239,65 @@ h1, h2, h3 {
 
 .view-sfdug-meetings .views-field-view-node a:hover {
   opacity: 0.9;
+}
+
+/* Pager Styling */
+.pager {
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.pager__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem;
+}
+
+.pager__item {
+  display: inline-block;
+}
+
+.pager__item a {
+  display: block;
+  padding: 0.8rem 1.2rem;
+  background-color: var(--midnight);
+  color: var(--off-white);
+  text-decoration: none;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.pager__item a:hover {
+  border-color: var(--coral);
+  color: var(--coral);
+  background-color: var(--deep-navy);
+}
+
+.pager__item.is-active a {
+  background-color: var(--coral);
+  color: white;
+  border-color: var(--coral);
+}
+
+.pager__item--next a,
+.pager__item--last a,
+.pager__item--first a,
+.pager__item--previous a {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--coral);
+}
+
+.pager__item--next a:hover,
+.pager__item--last a:hover {
+  background-color: rgba(233, 69, 96, 0.1);
+  border-color: transparent;
 }
 
 
@@ -379,24 +478,45 @@ footer a {
 }
 
 .session-full__video {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   background-color: #000;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
 }
 
 .session-full__video iframe {
-  width: 100%;
+  width: 100% !important;
+  height: auto !important;
   aspect-ratio: 16/9;
   border: 0;
+  display: block;
+}
+
+.session-full__video div {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Hide the "Session Video" field label */
+.session-full__video .field__label,
+.session-full__video > div > div:first-child:not(.media) {
+  display: none;
 }
 
 .session-full__meta {
-  font-size: 0.9rem;
-  color: var(--muted);
+  font-size: 1rem; /* Slightly larger */
+  color: var(--off-white); /* Brighter than muted */
+  opacity: 0.7;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.session-full__meta a {
+  color: var(--coral);
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .session-full__description,
