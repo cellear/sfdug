@@ -1,0 +1,49 @@
+# Large asset directories
+INCOMING/
+BRANDING/
+TOOLS/
+
+# Drupal CMS - Composer-managed (DO NOT COMMIT)
+drupalcms/vendor/
+drupalcms/web/core/
+drupalcms/web/modules/contrib/
+drupalcms/web/themes/contrib/
+drupalcms/web/profiles/contrib/
+drupalcms/web/libraries/
+drupalcms/recipes/
+drupalcms/drush/Commands/contrib/
+
+# Drupal CMS - Scaffold files (managed by Composer)
+drupalcms/web/.csslintrc
+drupalcms/web/.editorconfig
+drupalcms/web/.eslintignore
+drupalcms/web/.eslintrc.json
+drupalcms/web/.ht.router.php
+drupalcms/web/.htaccess
+drupalcms/web/autoload.php
+drupalcms/web/index.php
+drupalcms/web/update.php
+drupalcms/web/robots.txt
+drupalcms/web/INSTALL.txt
+drupalcms/web/README.md
+drupalcms/web/example.gitignore
+drupalcms/web/sites/README.txt
+drupalcms/web/sites/example.settings.local.php
+drupalcms/web/sites/example.sites.php
+drupalcms/web/sites/development.services.yml
+
+# Drupal CMS - User-generated content
+drupalcms/web/sites/*/files/
+drupalcms/web/sites/*/private/
+
+# Drupal CMS - Sensitive config
+drupalcms/web/sites/*/settings*.php
+drupalcms/web/sites/*/services*.yml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Claude Code
+.claude/

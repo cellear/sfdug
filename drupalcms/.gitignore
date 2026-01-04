@@ -1,0 +1,35 @@
+# Ignore dependencies managed with Composer
+/vendor/
+**/vendor/
+
+# Ignore configuration files that may contain sensitive information
+web/sites/*/settings*.php
+web/sites/*/services*.yml
+
+# Ignore paths that contain user-generated content
+web/sites/*/files/
+web/sites/*/private/
+
+# Ignore multi-site test environment
+web/sites/simpletest/
+
+# DDEV local environment
+.ddev/.homeadditions/
+.ddev/.global_commands/
+.ddev/commands/**/
+.ddev/.ddev-docker-compose-full.yaml
+.ddev/import-db/
+.ddev/sequelpro.spf
+.ddev/import.yaml
+.ddev/.gitignore
+.ddev/db-snapshots/
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
