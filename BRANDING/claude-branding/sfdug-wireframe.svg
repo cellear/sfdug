@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600">
+  <defs>
+    <!-- SFDUG Color Palette -->
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    
+    <!-- SF Fog/Bay inspired accent -->
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="100%" style="stop-color:#ff6b6b"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Color Palette Reference -->
+  <g transform="translate(900, 20)">
+    <text x="0" y="0" font-family="system-ui, sans-serif" font-size="12" fill="#666">Color Palette</text>
+    <rect x="0" y="10" width="40" height="25" fill="#1a1a2e" rx="3"/>
+    <text x="50" y="28" font-family="monospace" font-size="10" fill="#666">#1a1a2e Deep Navy</text>
+    <rect x="0" y="40" width="40" height="25" fill="#16213e" rx="3"/>
+    <text x="50" y="58" font-family="monospace" font-size="10" fill="#666">#16213e Midnight</text>
+    <rect x="0" y="70" width="40" height="25" fill="#e94560" rx="3"/>
+    <text x="50" y="88" font-family="monospace" font-size="10" fill="#666">#e94560 Coral accent</text>
+    <rect x="0" y="100" width="40" height="25" fill="#f8f8f8" stroke="#ddd" rx="3"/>
+    <text x="50" y="118" font-family="monospace" font-size="10" fill="#666">#f8f8f8 Off-white</text>
+    <rect x="0" y="130" width="40" height="25" fill="#0f3460" rx="3"/>
+    <text x="50" y="148" font-family="monospace" font-size="10" fill="#666">#0f3460 Bay Blue</text>
+  </g>
+
+  <!-- Header Bar -->
+  <rect x="0" y="0" width="1200" height="60" fill="#1a1a2e"/>
+  <text x="40" y="38" font-family="system-ui, sans-serif" font-size="18" font-weight="600" fill="#ffffff">SFDUG</text>
+  <text x="110" y="38" font-family="system-ui, sans-serif" font-size="14" fill="#888">San Francisco Drupal Users Group</text>
+  
+  <!-- Nav items (right aligned) -->
+  <text x="750" y="38" font-family="system-ui, sans-serif" font-size="14" fill="#888">About</text>
+  <text x="820" y="38" font-family="system-ui, sans-serif" font-size="14" fill="#888">Archive</text>
+  
+  <!-- Hero Section -->
+  <rect x="0" y="60" width="1200" height="500" fill="url(#heroGradient)"/>
+  
+  <!-- Geometric accent (SF-inspired, not Florida palm trees) -->
+  <g opacity="0.1">
+    <!-- Abstract bridge cables / fog lines -->
+    <line x1="0" y1="200" x2="400" y2="100" stroke="#e94560" stroke-width="2"/>
+    <line x1="0" y1="250" x2="500" y2="120" stroke="#e94560" stroke-width="1.5"/>
+    <line x1="0" y1="300" x2="600" y2="140" stroke="#e94560" stroke-width="1"/>
+    <line x1="800" y1="60" x2="1200" y2="300" stroke="#e94560" stroke-width="2"/>
+    <line x1="900" y1="60" x2="1200" y2="250" stroke="#e94560" stroke-width="1.5"/>
+    <line x1="1000" y1="60" x2="1200" y2="200" stroke="#e94560" stroke-width="1"/>
+  </g>
+  
+  <!-- Hero Content -->
+  <text x="80" y="200" font-family="system-ui, sans-serif" font-size="56" font-weight="700" fill="#ffffff">San Francisco</text>
+  <text x="80" y="270" font-family="system-ui, sans-serif" font-size="56" font-weight="700" fill="#ffffff">Drupal Users Group</text>
+  
+  <text x="80" y="340" font-family="system-ui, sans-serif" font-size="24" fill="#aaaaaa">Monthly sessions on Drupal development.</text>
+  <text x="80" y="375" font-family="system-ui, sans-serif" font-size="24" fill="#aaaaaa">Produced for professionals.</text>
+  
+  <!-- CTA Button -->
+  <rect x="80" y="420" width="220" height="50" fill="#e94560" rx="6"/>
+  <text x="130" y="452" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#ffffff">Join the mailing list</text>
+  
+  <!-- Schedule badge -->
+  <rect x="80" y="500" width="180" height="40" fill="rgba(255,255,255,0.1)" rx="4"/>
+  <text x="100" y="526" font-family="system-ui, sans-serif" font-size="14" fill="#888">Third Thursdays • Online</text>
+  
+  <!-- First Session Announcement -->
+  <rect x="0" y="560" width="1200" height="200" fill="#f8f8f8"/>
+  
+  <text x="80" y="620" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#e94560" letter-spacing="2">LAUNCHING 2025</text>
+  <text x="80" y="670" font-family="system-ui, sans-serif" font-size="32" font-weight="600" fill="#1a1a2e">First session featuring Matt Glaman</text>
+  <text x="80" y="710" font-family="system-ui, sans-serif" font-size="18" fill="#666">Drupal core contributor, author, and maintainer of projects you depend on.</text>
+  
+  <!-- Format Section -->
+  <rect x="0" y="760" width="1200" height="320" fill="#ffffff"/>
+  
+  <text x="80" y="820" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#e94560" letter-spacing="2">THE FORMAT</text>
+  <text x="80" y="870" font-family="system-ui, sans-serif" font-size="28" font-weight="600" fill="#1a1a2e">This isn't a casual meetup.</text>
+  
+  <!-- Three column features -->
+  <g transform="translate(80, 920)">
+    <!-- Column 1 -->
+    <rect x="0" y="0" width="300" height="120" fill="#f8f8f8" rx="8"/>
+    <text x="20" y="40" font-family="system-ui, sans-serif" font-size="18" font-weight="600" fill="#1a1a2e">45 minutes</text>
+    <text x="20" y="70" font-family="system-ui, sans-serif" font-size="14" fill="#666">One speaker, one topic,</text>
+    <text x="20" y="90" font-family="system-ui, sans-serif" font-size="14" fill="#666">recorded and published.</text>
+    
+    <!-- Column 2 -->
+    <rect x="340" y="0" width="300" height="120" fill="#f8f8f8" rx="8"/>
+    <text x="360" y="40" font-family="system-ui, sans-serif" font-size="18" font-weight="600" fill="#1a1a2e">Prepared</text>
+    <text x="360" y="70" font-family="system-ui, sans-serif" font-size="14" fill="#666">Speaker notes in advance.</text>
+    <text x="360" y="90" font-family="system-ui, sans-serif" font-size="14" fill="#666">Questions submitted beforehand.</text>
+    
+    <!-- Column 3 -->
+    <rect x="680" y="0" width="300" height="120" fill="#f8f8f8" rx="8"/>
+    <text x="700" y="40" font-family="system-ui, sans-serif" font-size="18" font-weight="600" fill="#1a1a2e">Published</text>
+    <text x="700" y="70" font-family="system-ui, sans-serif" font-size="14" fill="#666">YouTube and podcast feeds.</text>
+    <text x="700" y="90" font-family="system-ui, sans-serif" font-size="14" fill="#666">Content worth sharing.</text>
+  </g>
+  
+  <!-- History/Credibility Section -->
+  <rect x="0" y="1080" width="1200" height="180" fill="#0f3460"/>
+  
+  <text x="80" y="1150" font-family="system-ui, sans-serif" font-size="48" font-weight="700" fill="#ffffff">Nearly 20 years</text>
+  <text x="80" y="1200" font-family="system-ui, sans-serif" font-size="20" fill="#aaaaaa">of Bay Area Drupal. One of the longest-running user groups in the world.</text>
+  
+  <!-- BADCamp Connection -->
+  <rect x="0" y="1260" width="1200" height="140" fill="#f8f8f8"/>
+  
+  <text x="80" y="1320" font-family="system-ui, sans-serif" font-size="18" fill="#666">Part of the Bay Area Drupal community that brings you</text>
+  <!-- BADCamp logo placeholder -->
+  <rect x="80" y="1340" width="120" height="40" fill="#1a1a2e" rx="4"/>
+  <text x="105" y="1366" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#ffffff">BADCamp</text>
+  
+  <!-- Footer -->
+  <rect x="0" y="1400" width="1200" height="200" fill="#1a1a2e"/>
+  
+  <text x="80" y="1460" font-family="system-ui, sans-serif" font-size="24" font-weight="600" fill="#ffffff">SFDUG</text>
+  <text x="80" y="1490" font-family="system-ui, sans-serif" font-size="14" fill="#888">San Francisco Drupal Users Group</text>
+  
+  <!-- Social links placeholder -->
+  <g transform="translate(80, 1520)">
+    <rect x="0" y="0" width="30" height="30" fill="#333" rx="4"/>
+    <rect x="40" y="0" width="30" height="30" fill="#333" rx="4"/>
+    <rect x="80" y="0" width="30" height="30" fill="#333" rx="4"/>
+  </g>
+  
+  <text x="80" y="1580" font-family="system-ui, sans-serif" font-size="12" fill="#666">© 2025 San Francisco Drupal Users Group</text>
+
+  <!-- Annotations -->
+  <g font-family="system-ui, sans-serif" font-size="11" fill="#e94560">
+    <text x="620" y="180" font-style="italic">← Dark hero differentiates from FLDC's</text>
+    <text x="620" y="200" font-style="italic">   light/warm palette</text>
+    <text x="620" y="340" font-style="italic">← Geometric lines, not tropical imagery</text>
+    <text x="400" y="620" font-style="italic">← Coral accent ties to SF/fog aesthetic</text>
+    <text x="450" y="1150" font-style="italic">← Deep bay blue for credibility section</text>
+  </g>
+</svg>

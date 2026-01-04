@@ -1,7 +1,5 @@
 # Large asset directories
 INCOMING/
-BRANDING/
-TOOLS/
 
 # Drupal CMS - Composer-managed (DO NOT COMMIT)
 drupalcms/vendor/

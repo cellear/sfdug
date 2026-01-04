@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SFDUG — San Francisco Drupal Users Group</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --deep-navy: #1a1a2e;
+      --midnight: #16213e;
+      --bay-blue: #0f3460;
+      --coral: #e94560;
+      --off-white: #f8f8f8;
+      --muted: #888;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--deep-navy);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-slideshow {
+      width: 48px;
+      height: 48px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--bay-blue);
+    }
+
+    .logo-slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .logo-slideshow img.active {
+      opacity: 1;
+    }
+
+    .site-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .site-subtitle {
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 6rem 2rem 4rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .established {
+      font-size: 0.875rem;
+      color: var(--coral);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+
+    .hero-text {
+      font-size: 1.25rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .hero-text strong {
+      color: #fff;
+    }
+
+    .anniversary {
+      display: inline-block;
+      background: var(--coral);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #fff;
+      color: var(--deep-navy);
+      padding: 1rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(233, 69, 96, 0.3);
+    }
+
+    /* Crawl sections */
+    .crawl-section {
+      padding: 2rem 0;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .crawl-label {
+      font-size: 0.75rem;
+      color: var(--coral);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .crawl-track {
+      display: flex;
+      width: max-content;
+      animation: crawl 40s linear infinite;
+    }
+
+    .crawl-track:hover {
+      animation-play-state: paused;
+    }
+
+    .crawl-section:nth-child(odd) .crawl-track {
+      animation-direction: reverse;
+    }
+
+    @keyframes crawl {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .crawl-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 1.5rem;
+      white-space: nowrap;
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+    }
+
+    .crawl-item img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--bay-blue);
+    }
+
+    .crawl-item .placeholder-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--bay-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .crawl-separator {
+      color: var(--coral);
+      padding: 0 0.5rem;
+    }
+
+    /* Topics crawl - no avatars */
+    .topics-crawl .crawl-item {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.9rem;
+    }
+
+    /* Venues section */
+    .venues-section {
+      background: var(--bay-blue);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .venues-section h3 {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .venues-list {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 2;
+    }
+
+    /* Footer */
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--coral);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .hero {
+        padding: 4rem 1.5rem 3rem;
+      }
+      
+      .crawl-item {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <div class="logo-slideshow" id="logoSlideshow">
+        <!-- Placeholder logos - replace with actual historical logos/images -->
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect fill='%230f3460' width='48' height='48'/%3E%3Ctext x='24' y='32' text-anchor='middle' fill='white' font-family='system-ui' font-size='20' font-weight='bold'%3E06%3C/text%3E%3C/svg%3E" alt="2006" class="active">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect fill='%23e94560' width='48' height='48'/%3E%3Ctext x='24' y='32' text-anchor='middle' fill='white' font-family='system-ui' font-size='20' font-weight='bold'%3E11%3C/text%3E%3C/svg%3E" alt="2011">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect fill='%231a1a2e' width='48' height='48'/%3E%3Ctext x='24' y='32' text-anchor='middle' fill='white' font-family='system-ui' font-size='20' font-weight='bold'%3E15%3C/text%3E%3C/svg%3E" alt="2015">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect fill='%2316213e' width='48' height='48'/%3E%3Ctext x='24' y='32' text-anchor='middle' fill='white' font-family='system-ui' font-size='20' font-weight='bold'%3E20%3C/text%3E%3C/svg%3E" alt="2020">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect fill='%23e94560' width='48' height='48'/%3E%3Ctext x='24' y='32' text-anchor='middle' fill='white' font-family='system-ui' font-size='20' font-weight='bold'%3E26%3C/text%3E%3C/svg%3E" alt="2026">
+      </div>
+      <div>
+        <div class="site-title">SFDUG</div>
+        <div class="site-subtitle">San Francisco Drupal Users Group</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="established">Est. April 2006</div>
+      <h1>Twenty Years of Bay Area Drupal</h1>
+      <p class="hero-text">
+        In April 2006, <strong>Zack Rosen</strong> and <strong>Gregory Heller</strong> organized the first Drupal Camp SF — a two-day training at Compumentor's offices with <strong>Jeff Robbins</strong> from Lullabot. It sold out in five days.
+      </p>
+      <p class="hero-text">
+        That was the beginning. We're still here.
+      </p>
+      <div class="anniversary">April 2026 — 20th Anniversary</div>
+      <br><br>
+      <a href="#" class="cta-button">Join the mailing list</a>
+    </section>
+
+    <!-- Organizers Crawl -->
+    <section class="crawl-section">
+      <div class="crawl-label">Organizers Past & Present</div>
+      <div class="crawl-track" id="organizersCrawl">
+        <!-- Content duplicated for seamless loop -->
+      </div>
+    </section>
+
+    <!-- Speakers Crawl -->
+    <section class="crawl-section">
+      <div class="crawl-label">Speakers Who've Presented</div>
+      <div class="crawl-track" id="speakersCrawl">
+        <!-- Content duplicated for seamless loop -->
+      </div>
+    </section>
+
+    <!-- Topics Crawl -->
+    <section class="crawl-section topics-crawl">
+      <div class="crawl-label">Topics We've Covered</div>
+      <div class="crawl-track" id="topicsCrawl">
+        <!-- Content duplicated for seamless loop -->
+      </div>
+    </section>
+
+    <!-- Venues -->
+    <section class="venues-section">
+      <h3>Venues That Hosted Us</h3>
+      <p class="venues-list">
+        Pantheon · Chapter Three · Compumentor · UCSF Mission Center<br>
+        <em style="opacity: 0.6">(and your living room, 2020–present)</em>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Part of the Bay Area Drupal community that brings you <a href="https://www.badcamp.org">BADCamp</a>.</p>
+  </footer>
+
+  <script>
+    // Logo slideshow
+    const logos = document.querySelectorAll('#logoSlideshow img');
+    let currentLogo = 0;
+    
+    setInterval(() => {
+      logos[currentLogo].classList.remove('active');
+      currentLogo = (currentLogo + 1) % logos.length;
+      logos[currentLogo].classList.add('active');
+    }, 2500);
+
+    // Crawl data
+    const organizers = [
+      { name: 'Zack Rosen', initials: 'ZR' },
+      { name: 'John Faber', initials: 'JF' },
+      { name: 'Mark Ferree', initials: 'MF' },
+      { name: 'Anne Stefanyk', initials: 'AS' },
+      { name: 'Anne Bonham', initials: 'AB' },
+      { name: 'Eric Guirren', initials: 'EG' },
+      { name: 'AmyJune Hineline', initials: 'AH' },
+      { name: 'Annabella', initials: 'A' },
+      { name: 'Sean Dietrich', initials: 'SD' },
+      { name: 'Mark Casias', initials: 'MC' },
+      { name: 'James Kealy', initials: 'JK' }
+    ];
+
+    const speakers = [
+      { name: 'Alex Pott', initials: 'AP' },
+      { name: 'Jen Lampton', initials: 'JL' },
+      { name: 'Cathy Theys', initials: 'CT' },
+      { name: 'Matt Glaman', initials: 'MG' },
+      { name: 'Mike Herchel', initials: 'MH' },
+      { name: 'Martin Anderson-Clutz', initials: 'MA' },
+      { name: 'Mario Hernandez', initials: 'MH' },
+      { name: 'Danny Englander', initials: 'DE' },
+      { name: 'Greg Anderson', initials: 'GA' },
+      { name: 'Josh Koenig', initials: 'JK' },
+      { name: 'David Hwang', initials: 'DH' },
+      { name: 'Mauricio Dinarte', initials: 'MD' },
+      { name: 'Jürgen Haas', initials: 'JH' }
+    ];
+
+    const topics = [
+      'Headless Drupal', 'Twig', 'Layout Builder', 'Configuration Management',
+      'Composer', 'Backdrop CMS', 'Accessibility', 'WCAG', 'Migrations',
+      'DevOps', 'Responsive Images', 'PHPStan', 'Solr', 'Views', 'Theming',
+      'Gift of Open Source', 'React', 'Tailwind CSS', 'DDEV', 'Pantheon',
+      'Multisite', 'Performance', 'Security', 'Contrib', 'Core'
+    ];
+
+    // Build crawl content
+    function buildPeopleCrawl(container, people) {
+      const content = people.map(p => `
+        <div class="crawl-item">
+          <div class="placeholder-avatar">${p.initials}</div>
+          ${p.name}
+        </div>
+        <span class="crawl-separator">·</span>
+      `).join('');
+      // Duplicate for seamless loop
+      container.innerHTML = content + content;
+    }
+
+    function buildTopicsCrawl(container, items) {
+      const content = items.map(t => `
+        <div class="crawl-item">${t}</div>
+        <span class="crawl-separator">·</span>
+      `).join('');
+      container.innerHTML = content + content;
+    }
+
+    buildPeopleCrawl(document.getElementById('organizersCrawl'), organizers);
+    buildPeopleCrawl(document.getElementById('speakersCrawl'), speakers);
+    buildTopicsCrawl(document.getElementById('topicsCrawl'), topics);
+  </script>
+
+</body>
+</html>
