@@ -26,20 +26,45 @@ body {
 header {
   background-color: var(--midnight);
   border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding: 1rem 0;
+  padding: 2rem 0;
 }
 
 .site-header__inner {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+/* Branding Block Styling */
+#block-sfdug-2025-branding {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.site-name a {
-  color: var(--text-light);
+#block-sfdug-2025-branding img {
+  max-width: 350px; /* Reduced logo size by ~50% (original 708px) */
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+#block-sfdug-2025-branding a[rel="home"] {
+  color: var(--coral) !important;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 1.5rem;
+  font-weight: 900;
+  font-size: 2.5rem; /* Larger visible font for site name */
+  line-height: 1.1;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#block-sfdug-2025-branding {
+  color: var(--off-white) !important;
+  font-size: 1.2rem; /* Larger font for slogan */
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 /* Navigation */
@@ -49,10 +74,11 @@ nav.primary-menu .menu,
   list-style: none !important;
   display: flex !important;
   flex-direction: row !important;
-  gap: 20px !important;
+  gap: 30px !important;
   margin: 0 !important;
   padding: 0 !important;
   align-items: center !important;
+  justify-content: center !important;
 }
 
 nav.primary-menu li,
@@ -67,8 +93,9 @@ nav.primary-menu a,
 .primary-menu a {
   color: var(--text-light);
   text-decoration: none;
-  font-weight: 500;
-  opacity: 0.8;
+  font-weight: 600;
+  font-size: 1.1rem;
+  opacity: 0.9;
   padding: 0.5rem 0;
   display: block;
 }
@@ -200,17 +227,19 @@ footer a {
 }
 
 .hero__title {
-  font-size: 3rem;
-  margin: 0 0 0.5rem 0;
+  font-size: 3.5rem;
+  margin: 0 0 1rem 0;
   font-weight: 900;
+  color: var(--coral);
 }
 
 .hero__subtitle {
-  font-size: 1.2rem;
-  color: var(--muted);
+  font-size: 1.5rem;
+  color: var(--off-white);
   margin: 0 0 2rem 0;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  opacity: 0.8;
 }
 
 .hero__story {

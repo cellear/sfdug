@@ -1,9 +1,7 @@
 <div class="layout-container">
   <header role="banner">
     <div class="container site-header__inner">
-      <div class="site-name">
-        <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">SFDUG</a>
-      </div>
+      {{ page.header }}
       {% if page.primary_menu %}
         <nav class="primary-menu" role="navigation">
           {{ page.primary_menu }}
